@@ -1,0 +1,25 @@
+<h1>Add A New Entry!</h1>
+
+<form action="/entries" method="post">
+  <p>
+    <label for="title">Title:</label>
+    <p>
+    <input type="text" name="entry[title]" style="width: 500px; height: 20px;">
+
+  <p>
+    <label for="occured_on">Date</label>
+    <input type="date" name="entry[occured_on]">
+
+  <p>
+    <label for="description">Description:</label>
+    <p>
+    <input type="text" name="entry[description]" style="width: 500px; height: 100px;">
+  
+  
+  <p>
+  <br>
+  <button>Submit</button>
+</form>
+
+<p>
+<a href="/entries">Cancel</a>
