@@ -5,11 +5,13 @@
 <li>
 <% for place in @places %>
   </p>
-   <a href="/entries/<%= place["id"] %>"><%= place["name"] %></a>
+   <a href="/places/<%= place["id"] %>"><%= place["name"] %></a>
 <% end %>
 </li>
 
 
 <p>
+<br>
+<br>
 <br>
 <button><a href="/places/new">New Place</a></button>

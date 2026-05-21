@@ -8,12 +8,15 @@
 
   <p>
     <label for="occured_on">Date</label>
-    <input type="date" name="entry[occured_on]">
+    <input type="date" name="entry[occurred_on]">
 
   <p>
     <label for="description">Description:</label>
     <p>
     <input type="text" name="entry[description]" style="width: 500px; height: 100px;">
+
+  <p>
+  <input type="hidden" name="place_id" value="<%= @place_id %>">
   
   
   <p>
@@ -22,4 +25,4 @@
 </form>
 
 <p>
-<a href="/places">Cancel</a>
+<a href="/places/<%= @place_id %>">Cancel</a>

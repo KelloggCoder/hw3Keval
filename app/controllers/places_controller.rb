@@ -6,7 +6,8 @@ class PlacesController < ApplicationController
 
 
   def show
-   @places = Place.all
+    @place = Place.find(params[:id])
+    @entries = Entry.where({ :place_id => params[:id] })
   end
 
 
@@ -19,7 +20,7 @@ class PlacesController < ApplicationController
     @place = Place.new
 
     # assign user-entered form data to Place name
-    @place["name"] = params["name"]
+    @place["name"] = params["place"]["name"]
 
     # save Place row
     @place.save

@@ -4,24 +4,25 @@ class EntriesController < ApplicationController
   end
 
   def new
+    @place_id = params["place_id"]
   end
 
   def show
+  @place = Place.find(params[:id])  # get one place by id
+ 
   end
 
   def create
-    # start with a new Entry
     @entry = Entry.new
 
-    # assign user-entered form data to Entry details
-    @entry["title"] = params["title"]
-    @entry["occured_on"] = params["occured_on"]
-    @entry["description"] = params["description"]
-    # save entry row
+    @entry["title"] = params["entry"]["title"]
+    @entry["occurred_on"] = params["entry"]["occurred_on"]
+    @entry["description"] = params["entry"]["description"]
+    @entry["place_id"] = params["place_id"]
+
     @entry.save
 
-    # redirect user
-    redirect_to "/places"
+    redirect_to "/places/#{params["place_id"]}"
   end
 
 end
