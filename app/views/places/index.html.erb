@@ -1,13 +1,15 @@
 <h1>Places I've Been</h1>
 
 
-<ul>
-<li><%= for zebra in @places 
-end
-%></li>
-<li>place 2</li>
-<li>place 3</li>
-</ul>
+
+<li>
+<% for place in @places %>
+  </p>
+   <a href="/entries/<%= place["id"] %>"><%= place["name"] %></a>
+<% end %>
+</li>
 
 
-<a href="/places/new">New Place</a>
+<p>
+<br>
+<button><a href="/places/new">New Place</a></button>
